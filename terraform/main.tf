@@ -23,7 +23,7 @@ data "azurerm_resource_group" "resource_group" {
 
 data "azurerm_storage_account" "storage_account" {
   name                     = var.storage_account_name
-  resource_group_name      = azurerm_resource_group.resource_group.name
+  resource_group_name      = data.azurerm_resource_group.resource_group.name
 }
 
 resource "azurerm_service_plan" "service_plan" {
